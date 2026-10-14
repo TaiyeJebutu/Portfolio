@@ -6,7 +6,7 @@ import type { SiteConfig } from "./types";
  * comfortable naming your employer publicly.
  */
 export const site: SiteConfig = {
-  name: "Your Name",
+  name: "Taiye Jebutu",
   role: "Senior Software Engineer",
   employer: "Leonardo",
   location: "Luton, England",
@@ -82,7 +82,7 @@ export const site: SiteConfig = {
   projects: [],
 
   // Sports, fitness, challenges, learning, community. Leave empty to hide the section.
-  beyondWork: [],
+  beyondWork: [Running, Gym, Philosophy, Reading, Bouldering],
 
   contact: {
     blurb: "I'm happy to talk about engineering practice, mentoring and how teams ship well.",
