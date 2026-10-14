@@ -1,10 +1,26 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 
-export default function Nav({ name, links }: { name: string; links: { href: string; label: string }[] }) {
+type NavLink = { href: string; label: string };
+
+/** In-page anchors ("#about") are plain links; other pages ("/life/") go through Link so the base path is added. */
+function NavAnchor({ href, className, onClick, children }: { href: string; className: string; onClick?: () => void; children: React.ReactNode }) {
+  return href.startsWith("#") ? (
+    <a href={href} className={className} onClick={onClick}>
+      {children}
+    </a>
+  ) : (
+    <Link href={href} className={className} onClick={onClick}>
+      {children}
+    </Link>
+  );
+}
+
+export default function Nav({ name, links, homeHref = "#top" }: { name: string; links: NavLink[]; homeHref?: string }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -22,19 +38,19 @@ export default function Nav({ name, links }: { name: string; links: { href: stri
       }`}
     >
       <nav aria-label="Main" className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:px-8">
-        <a href="#top" className="text-base font-bold tracking-tight [font-variation-settings:'wdth'_118]">
+        <NavAnchor href={homeHref} className="text-base font-bold tracking-tight [font-variation-settings:'wdth'_118]">
           {name}
-        </a>
+        </NavAnchor>
         <div className="flex items-center gap-1">
           <ul className="hidden items-center gap-1 md:flex">
             {links.map((l) => (
               <li key={l.href}>
-                <a
+                <NavAnchor
                   href={l.href}
                   className="rounded-full px-3 py-1.5 type-small text-muted transition-colors hover:bg-surface hover:text-ink"
                 >
                   {l.label}
-                </a>
+                </NavAnchor>
               </li>
             ))}
           </ul>
@@ -62,9 +78,9 @@ export default function Nav({ name, links }: { name: string; links: { href: stri
           >
             {links.map((l) => (
               <li key={l.href} className="border-t border-line">
-                <a href={l.href} onClick={() => setOpen(false)} className="block py-3 type-h3">
+                <NavAnchor href={l.href} onClick={() => setOpen(false)} className="block py-3 type-h3">
                   {l.label}
-                </a>
+                </NavAnchor>
               </li>
             ))}
           </motion.ul>
