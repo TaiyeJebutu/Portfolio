@@ -92,8 +92,8 @@ export const site: SiteConfig = {
 
   contact: {
     blurb: "I'm happy to talk about engineering practice, mentoring and how teams ship well.",
-    email: "", // e.g. "you@example.com"
-    links: [
+    email: "taiyejebutu@outlook.com", // e.g. "you@example.com"
+    links: [{label: "LinkedIn", href:"https://uk.linkedin.com/in/taiyejebutu"},
       // { label: "LinkedIn", href: "https://www.linkedin.com/in/..." },
       // { label: "GitHub", href: "https://github.com/..." },
     ],
