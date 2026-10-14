@@ -82,7 +82,7 @@ export const site: SiteConfig = {
   projects: [],
 
   // Sports, fitness, challenges, learning, community. Leave empty to hide the section.
-  beyondWork: [Running, Gym, Philosophy, Reading, Bouldering],
+  beyondWork: ["Running", "Gym", "Philosophy", "Reading", "Bouldering"],
 
   contact: {
     blurb: "I'm happy to talk about engineering practice, mentoring and how teams ship well.",
