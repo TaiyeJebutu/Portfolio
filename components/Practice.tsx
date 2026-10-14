@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { levelNames, skillByCode } from "@/content/skills";
 import type { PublicItem, SkillStat } from "@/lib/data";
 import { itemDate } from "@/lib/format";
@@ -67,13 +68,15 @@ export default function Practice({
           <Reveal className="min-w-0 rounded-3xl bg-surface p-6 md:p-8 lg:col-span-5">
             <h3 className="type-h3">Level by skill</h3>
             <p className="mt-2 type-small text-muted">
-              Highest level my published evidence supports in each skill. Outer rings are higher levels; ring 5 is senior specialist, ring 6 principal.
+              Highest SFIA level my published evidence supports in each skill, shown as L4, L5 and so on. Outer rings are higher levels; ring 5 is senior specialist, ring 6 principal.
             </p>
             <Radar stats={stats} />
           </Reveal>
           <Reveal delay={0.08} className="min-w-0 rounded-3xl bg-surface p-6 md:p-8 lg:col-span-7">
-            <h3 className="type-h3">Evidence over time</h3>
-            <p className="mt-2 type-small text-muted">Published pieces of evidence per skill, by year.</p>
+            <h3 className="type-h3">How often each skill shows up</h3>
+            <p className="mt-2 type-small text-muted">
+              How many pieces of evidence use each skill, by year. Shading shows how much work there is, not its level.
+            </p>
             <Heatmap grid={grid} />
           </Reveal>
           {strongest.length > 0 && (
@@ -161,7 +164,7 @@ function Radar({ stats }: { stats: Record<string, SkillStat> }) {
           return (
             <text key={a.code} x={x} y={y} textAnchor={anchor} dominantBaseline="middle" fontSize="16" fill="var(--ink)">
               {skillByCode[a.code].short}
-              <tspan fill="var(--muted)"> {a.level}</tspan>
+              <tspan fill="var(--muted)"> L{a.level}</tspan>
             </text>
           );
         })}
@@ -191,39 +194,97 @@ function LevelBar({ stat }: { stat: SkillStat }) {
   );
 }
 
+/** Count bands. Shading, not numbers, so counts are never mistaken for SFIA levels; works at any count. */
+const bands = [
+  { label: "1–2", min: 1, mix: 22 },
+  { label: "3–5", min: 3, mix: 50 },
+  { label: "6+", min: 6, mix: 85 },
+];
+const shade = (n: number) => {
+  const band = [...bands].reverse().find((b) => n >= b.min);
+  return band ? `color-mix(in oklab, var(--ink) ${band.mix}%, var(--bg))` : "var(--bg)";
+};
+const pieces = (n: number) => `${n} ${n === 1 ? "piece" : "pieces"} of evidence`;
+
 function Heatmap({ grid }: { grid: { quarters: string[]; rows: { code: string; cells: number[] }[] } }) {
-  const max = Math.max(1, ...grid.rows.flatMap((r) => r.cells));
+  const [active, setActive] = useState<{ code: string; year: string; n: number } | null>(null);
   return (
-    <div className="relative mt-6 overflow-x-auto">
-      <table className="w-full min-w-[440px] border-separate border-spacing-1 type-small">
-        <caption className="sr-only">Published evidence count per skill per year</caption>
-        <thead>
-          <tr>
-            <th scope="col" className="sr-only">
-              Skill
-            </th>
-            {grid.quarters.map((q) => (
-              <th key={q} scope="col" className="pb-1 text-center font-normal text-muted">
-                {q.replace(" ", " ")}
+    <div className="mt-6">
+      <div className="relative overflow-x-auto">
+        <table className="w-full min-w-[440px] border-separate border-spacing-1 type-small" onMouseLeave={() => setActive(null)}>
+          <caption className="sr-only">
+            Number of published pieces of evidence per skill per year. These are counts, not SFIA levels.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col" className="sr-only">
+                Skill
               </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {grid.rows.map((row) => (
-            <tr key={row.code}>
-              <th scope="row" className="whitespace-nowrap pr-3 text-left font-normal">
-                {skillByCode[row.code].short}
-              </th>
-              {row.cells.map((n, i) => (
-                <td key={i} className="h-7 min-w-8 rounded-md text-center" style={{ background: n ? `color-mix(in oklab, var(--accent) ${20 + (n / max) * 70}%, transparent)` : "var(--bg)" }}>
-                  <span className={n ? `font-semibold ${n / max > 0.5 ? "text-bg" : "text-ink"}` : "sr-only"}>{n || "0"}</span>
-                </td>
+              {grid.quarters.map((q) => (
+                <th key={q} scope="col" className="pb-1 text-center font-normal text-muted">
+                  {q}
+                </th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {grid.rows.map((row) => (
+              <tr key={row.code}>
+                <th scope="row" className="whitespace-nowrap pr-3 text-left font-normal">
+                  {skillByCode[row.code].short}
+                </th>
+                {row.cells.map((n, i) => {
+                  const year = grid.quarters[i];
+                  const label = `${skillByCode[row.code].short}, ${year}: ${n ? pieces(n) : "no evidence"}`;
+                  const isActive = active?.code === row.code && active.year === year;
+                  return (
+                    <td key={year} className="p-0">
+                      <button
+                        type="button"
+                        aria-label={label}
+                        title={label}
+                        onMouseEnter={() => setActive({ code: row.code, year, n })}
+                        onFocus={() => setActive({ code: row.code, year, n })}
+                        onClick={() => setActive({ code: row.code, year, n })}
+                        className={`block h-7 w-full min-w-10 rounded-md transition-shadow ${
+                          isActive ? "ring-2 ring-accent ring-offset-1 ring-offset-surface" : ""
+                        }`}
+                        style={{ background: shade(n) }}
+                      />
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <p className="mt-4 min-h-[1.5rem] type-small" aria-live="polite">
+        {active ? (
+          <>
+            <span className="font-semibold">{skillByCode[active.code].short}</span>
+            {", "}
+            {active.year}: {active.n ? pieces(active.n) : "no evidence yet"}
+          </>
+        ) : (
+          <span className="text-muted">Hover over or tap a square to see the exact count.</span>
+        )}
+      </p>
+
+      <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 type-small text-muted" aria-hidden="true">
+        <span>Pieces of evidence:</span>
+        {bands.map((b) => (
+          <span key={b.label} className="flex items-center gap-2">
+            <span className="h-3.5 w-5 rounded" style={{ background: shade(b.min) }} />
+            {b.label}
+          </span>
+        ))}
+        <span className="flex items-center gap-2">
+          <span className="h-3.5 w-5 rounded border border-line" style={{ background: "var(--bg)" }} />
+          None
+        </span>
+      </div>
     </div>
   );
 }
