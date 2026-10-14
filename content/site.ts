@@ -82,7 +82,13 @@ export const site: SiteConfig = {
   projects: [],
 
   // Sports, fitness, challenges, learning, community. Leave empty to hide the section.
-  beyondWork: ["Running", "Gym", "Philosophy", "Reading", "Bouldering"],
+  beyondWork: [
+    { title: "Running", detail: "Getting out on the road regularly.", quality: "Discipline" },
+    { title: "Gym", detail: "Strength training as a weekly habit.", quality: "Consistency" },
+    { title: "Bouldering", detail: "Working out problems one move at a time.", quality: "Persistence" },
+    { title: "Philosophy", detail: "Reading and thinking about how we reason and decide.", quality: "Curiosity" },
+    { title: "Reading", detail: "Books outside engineering.", quality: "Breadth" },
+  ],
 
   contact: {
     blurb: "I'm happy to talk about engineering practice, mentoring and how teams ship well.",
