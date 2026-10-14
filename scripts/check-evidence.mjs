@@ -19,7 +19,7 @@ if (!Array.isArray(data)) {
 const problems = [];
 data.forEach((r, i) => {
   const at = `record ${i + 1} (${r.title ?? "untitled"})`;
-  if (!/^\d{4}-\d{2}(-\d{2})?$/.test(r.date ?? "")) problems.push(`${at}: date must be YYYY-MM or YYYY-MM-DD`);
+  if (!/^\d{4}(-\d{2}(-\d{2})?)?$/.test(r.date ?? "")) problems.push(`${at}: date must be YYYY, YYYY-MM or YYYY-MM-DD (add "date_approximate": true if it is a best guess)`);
   if (!strengths.has(r.evidence_strength)) problems.push(`${at}: evidence_strength must be weak, moderate or strong`);
   for (const c of r.competencies ?? []) {
     const code = typeof c === "string" ? c : c.code;

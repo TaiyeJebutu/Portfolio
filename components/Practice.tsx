@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { levelNames, skillByCode } from "@/content/skills";
 import type { PublicItem, SkillStat } from "@/lib/data";
-import { formatDate } from "@/lib/format";
+import { itemDate } from "@/lib/format";
 import { Reveal, Section } from "./Reveal";
 
 interface Area {
@@ -60,17 +60,17 @@ export default function Practice({
       </div>
 
       {showDashboard && (
-        <div className="mt-24 grid gap-10 lg:grid-cols-12">
-          <Reveal className="rounded-3xl bg-surface p-6 md:p-8 lg:col-span-5">
+        <div className="mt-24 grid grid-cols-1 gap-10 lg:grid-cols-12">
+          <Reveal className="min-w-0 rounded-3xl bg-surface p-6 md:p-8 lg:col-span-5">
             <h3 className="type-h3">Level by skill</h3>
             <p className="mt-2 type-small text-muted">
               Highest SFIA level shown by moderate or strong evidence. Ring 5 is “ensure, advise”, ring 6 is “initiate, influence”.
             </p>
             <Radar stats={stats} />
           </Reveal>
-          <Reveal delay={0.08} className="rounded-3xl bg-surface p-6 md:p-8 lg:col-span-7">
+          <Reveal delay={0.08} className="min-w-0 rounded-3xl bg-surface p-6 md:p-8 lg:col-span-7">
             <h3 className="type-h3">Evidence over time</h3>
-            <p className="mt-2 type-small text-muted">Published pieces of evidence per skill, by quarter.</p>
+            <p className="mt-2 type-small text-muted">Published pieces of evidence per skill, by year.</p>
             <Heatmap grid={grid} />
           </Reveal>
           {strongest.length > 0 && (
@@ -79,7 +79,7 @@ export default function Practice({
               <ul className="mt-6 grid gap-6 md:grid-cols-3">
                 {strongest.map((s) => (
                   <li key={s.id} className="border-l-2 border-signal pl-4">
-                    <p className="type-small text-muted">{formatDate(s.date)}</p>
+                    <p className="type-small text-muted">{itemDate(s)}</p>
                     <p className="mt-1 font-semibold">{s.title}</p>
                     {s.outcomes[0] && <p className="mt-2 type-small text-muted">{s.outcomes[0]}</p>}
                   </li>
@@ -120,7 +120,7 @@ function Radar({ stats }: { stats: Record<string, SkillStat> }) {
 
   return (
     <figure className="mt-6">
-      <svg viewBox={`-70 -16 ${size + 140} ${size + 32}`} className="mx-auto w-full max-w-[440px] overflow-visible" role="img" aria-label="Radar chart of evidenced SFIA levels">
+      <svg viewBox={`-120 -20 ${size + 240} ${size + 40}`} className="mx-auto w-full max-w-[480px]" role="img" aria-label="Radar chart of evidenced SFIA levels">
         {[1, 2, 3, 4, 5, 6, 7].map((l) => (
           <polygon
             key={l}
@@ -156,7 +156,7 @@ function Radar({ stats }: { stats: Record<string, SkillStat> }) {
           const [x, y] = point(i, 8.4);
           const anchor = Math.abs(x - c) < 8 ? "middle" : x > c ? "start" : "end";
           return (
-            <text key={a.code} x={x} y={y} textAnchor={anchor} dominantBaseline="middle" fontSize="13" fill="var(--ink)">
+            <text key={a.code} x={x} y={y} textAnchor={anchor} dominantBaseline="middle" fontSize="16" fill="var(--ink)">
               {skillByCode[a.code].short}
               <tspan fill="var(--muted)"> {a.level}</tspan>
             </text>
@@ -191,9 +191,9 @@ function LevelBar({ stat }: { stat: SkillStat }) {
 function Heatmap({ grid }: { grid: { quarters: string[]; rows: { code: string; cells: number[] }[] } }) {
   const max = Math.max(1, ...grid.rows.flatMap((r) => r.cells));
   return (
-    <div className="mt-6 overflow-x-auto">
+    <div className="relative mt-6 overflow-x-auto">
       <table className="w-full min-w-[440px] border-separate border-spacing-1 type-small">
-        <caption className="sr-only">Published evidence count per skill per quarter</caption>
+        <caption className="sr-only">Published evidence count per skill per year</caption>
         <thead>
           <tr>
             <th scope="col" className="sr-only">

@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 import { skillByCode } from "@/content/skills";
 import type { Milestone } from "@/content/types";
 import type { PublicItem } from "@/lib/data";
-import { formatDate } from "@/lib/format";
+import { formatDate, itemDate } from "@/lib/format";
 import { Reveal, Section } from "./Reveal";
 
 type Entry =
@@ -96,7 +96,7 @@ function EvidenceCard({ item }: { item: PublicItem }) {
         >
           <span>
             <span className="block type-small text-muted">
-              {formatDate(item.date)}
+              {itemDate(item)}
               {item.strength === "strong" && <span className="ml-2 text-signal">Strong evidence</span>}
             </span>
             <span className="mt-0.5 block font-semibold">{item.title}</span>

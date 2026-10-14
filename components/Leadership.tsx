@@ -3,7 +3,7 @@
 import { animate, useInView, useReducedMotion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import type { PublicItem } from "@/lib/data";
-import { formatDate } from "@/lib/format";
+import { itemDate } from "@/lib/format";
 import { Reveal, Section } from "./Reveal";
 
 export default function Leadership({
@@ -53,7 +53,7 @@ export default function Leadership({
           <ul className="mt-6 divide-y divide-line border-y border-line">
             {items.slice(0, 5).map((it) => (
               <li key={it.id} className="grid gap-1 py-4 md:grid-cols-[8rem_1fr]">
-                <span className="type-small text-muted">{formatDate(it.date)}</span>
+                <span className="type-small text-muted">{itemDate(it)}</span>
                 <span>
                   <span className="font-semibold">{it.title}</span>
                   {it.outcomes[0] && <span className="block text-muted">{it.outcomes[0]}</span>}

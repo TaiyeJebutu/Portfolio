@@ -10,7 +10,9 @@ export type CompetencyRef = string | { code: string; level?: number };
  * classified details or internal metrics you are not cleared to share).
  */
 export interface EvidenceRecord {
-  date: string; // YYYY-MM-DD or YYYY-MM
+  date: string; // YYYY, YYYY-MM or YYYY-MM-DD
+  /** True when the date is a best estimate rather than a known date. */
+  date_approximate?: boolean;
   title: string;
   description: string;
   impact: string;

@@ -1,1 +1,577 @@
-[]
+[
+  {
+    "date": "2023-02",
+    "date_approximate": true,
+    "title": "Stepped in as Scrum Master",
+    "description": "Covered the Scrum Master role when they were away: ran retrospectives, stand-ups and iteration planning, helped refine the backlog, and made sure demos were ready on time.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "DEMG",
+        "level": 4
+      },
+      {
+        "code": "OFCL",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "Scrum",
+      "retrospectives",
+      "stand-ups",
+      "iteration planning",
+      "backlog refinement",
+      "demos"
+    ],
+    "outcomes": [],
+    "tags": [
+      "leadership",
+      "delivery",
+      "cover"
+    ],
+    "publish": {
+      "title": "Stepped in as Scrum Master",
+      "summary": "Covered the Scrum Master role when they were away: ran retrospectives, stand-ups and iteration planning, helped refine the backlog, and made sure demos were ready on time."
+    }
+  },
+  {
+    "date": "2023-04",
+    "date_approximate": true,
+    "title": "Built features across varied components and platforms",
+    "description": "Implemented new functionality and improvements on stateful and stateless, event-based and cycle-based components, adapting code to run on both Linux and Windows.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "PROG",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "weak",
+    "keywords": [
+      "C#",
+      "Python",
+      "Linux",
+      "Windows",
+      "state machines",
+      "event-based",
+      "cycle-based"
+    ],
+    "outcomes": [],
+    "tags": [
+      "technical"
+    ],
+    "publish": {
+      "title": "Built features across varied components and platforms",
+      "summary": "Implemented new functionality and improvements on stateful and stateless, event-based and cycle-based components, adapting code to run on both Linux and Windows."
+    }
+  },
+  {
+    "date": "2023-06",
+    "date_approximate": true,
+    "title": "Test coverage traceable to requirements",
+    "description": "Wrote unit and component tests for almost every component in the project, each traceable back to its requirements.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "TEST",
+        "level": 4
+      },
+      {
+        "code": "REQM",
+        "level": 3
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "unit testing",
+      "component testing",
+      "traceability"
+    ],
+    "outcomes": [],
+    "tags": [
+      "technical",
+      "quality"
+    ],
+    "publish": {
+      "title": "Test coverage traceable to requirements",
+      "summary": "Wrote unit and component tests for almost every component in the project, each traceable back to its requirements."
+    }
+  },
+  {
+    "date": "2023-09",
+    "date_approximate": true,
+    "title": "Helped set the team's coding standards",
+    "description": "Took part in defining the coding standards the team works to (the company C# standard and PEP 8 for Python), applied through code review and tooling such as ReSharper.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "PROG",
+        "level": 4
+      },
+      {
+        "code": "METL",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "coding standards",
+      "PEP 8",
+      "C#",
+      "ReSharper",
+      "code review"
+    ],
+    "outcomes": [],
+    "tags": [
+      "technical",
+      "quality"
+    ],
+    "publish": {
+      "title": "Helped set the team's coding standards",
+      "summary": "Took part in defining the coding standards the team works to (the company C# standard and PEP 8 for Python), applied through code review and tooling such as ReSharper."
+    }
+  },
+  {
+    "date": "2023-11",
+    "date_approximate": true,
+    "title": "Managed versions across branches",
+    "description": "Managed components across main, release and feature branches so work could continue on several software versions at once.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "RELM",
+        "level": 3
+      },
+      {
+        "code": "METL",
+        "level": 3
+      }
+    ],
+    "evidence_strength": "weak",
+    "keywords": [
+      "source control",
+      "branching",
+      "release branches"
+    ],
+    "outcomes": [],
+    "tags": [
+      "technical",
+      "delivery"
+    ],
+    "publish": {
+      "title": "Managed versions across branches",
+      "summary": "Managed components across main, release and feature branches so work could continue on several software versions at once."
+    }
+  },
+  {
+    "date": "2024-02",
+    "date_approximate": true,
+    "title": "Redesigned a component testing framework",
+    "description": "Diagnosed why component tests gave inconsistent results on the build pipelines, redesigned the framework, then refined it so the tests run reliably and consistently.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "TEST",
+        "level": 5
+      },
+      {
+        "code": "SWDN",
+        "level": 4
+      },
+      {
+        "code": "SINT",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "test framework",
+      "component testing",
+      "CI",
+      "build server",
+      "pipeline reliability"
+    ],
+    "outcomes": [],
+    "tags": [
+      "technical",
+      "quality",
+      "improvement"
+    ],
+    "publish": {
+      "title": "Redesigned a component testing framework",
+      "summary": "Diagnosed why component tests gave inconsistent results on the build pipelines, redesigned the framework, then refined it so the tests run reliably and consistently."
+    }
+  },
+  {
+    "date": "2024-05",
+    "date_approximate": true,
+    "title": "Test frameworks that mock external systems",
+    "description": "Helped design component-testing frameworks that mock external systems such as APIs and databases, so each component can be tested in isolation. Every change I make ships with unit tests.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "TEST",
+        "level": 4
+      },
+      {
+        "code": "PROG",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "mocking",
+      "test frameworks",
+      "APIs",
+      "databases",
+      "unit testing"
+    ],
+    "outcomes": [],
+    "tags": [
+      "technical",
+      "quality"
+    ],
+    "publish": {
+      "title": "Test frameworks that mock external systems",
+      "summary": "Helped design component-testing frameworks that mock external systems such as APIs and databases, so each component can be tested in isolation. Every change I make ships with unit tests."
+    }
+  },
+  {
+    "date": "2024-08",
+    "date_approximate": true,
+    "title": "Migrated components to a new interface",
+    "description": "Updated most of the project's components to a new set of interface messages and upgraded their functionality to use them as intended.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "PROG",
+        "level": 4
+      },
+      {
+        "code": "SINT",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "interfaces",
+      "messaging",
+      "integration",
+      "refactoring"
+    ],
+    "outcomes": [],
+    "tags": [
+      "technical",
+      "integration"
+    ],
+    "publish": {
+      "title": "Migrated components to a new interface",
+      "summary": "Updated most of the project's components to a new set of interface messages and upgraded their functionality to use them as intended."
+    }
+  },
+  {
+    "date": "2024-10",
+    "date_approximate": true,
+    "title": "Worked with a simulation vendor on lab scenarios",
+    "description": "Worked with an external simulation-tool vendor to develop scenarios used for lab testing.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "RLMT",
+        "level": 4
+      },
+      {
+        "code": "SINT",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "vendor collaboration",
+      "simulation",
+      "lab testing"
+    ],
+    "outcomes": [],
+    "tags": [
+      "collaboration",
+      "integration"
+    ],
+    "publish": {
+      "title": "Worked with a simulation vendor on lab scenarios",
+      "summary": "Worked with an external simulation-tool vendor to develop scenarios used for lab testing."
+    }
+  },
+  {
+    "date": "2025-01",
+    "date_approximate": true,
+    "title": "Release planning and documentation",
+    "description": "Helped plan releases to internal customers by defining feature acceptance criteria, and kept release documentation such as the software design description up to date.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "RELM",
+        "level": 4
+      },
+      {
+        "code": "REQM",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "weak",
+    "keywords": [
+      "release planning",
+      "acceptance criteria",
+      "SDD",
+      "documentation"
+    ],
+    "outcomes": [],
+    "tags": [
+      "delivery"
+    ],
+    "publish": {
+      "title": "Release planning and documentation",
+      "summary": "Helped plan releases to internal customers by defining feature acceptance criteria, and kept release documentation such as the software design description up to date."
+    }
+  },
+  {
+    "date": "2025-03",
+    "date_approximate": true,
+    "title": "Estimation and risk in PI planning",
+    "description": "Contributed estimates for requested features in programme increment planning, and set out the risks and effort for work in the areas I know best.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "DLMG",
+        "level": 4
+      },
+      {
+        "code": "DEMG",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "PI planning",
+      "estimation",
+      "risk",
+      "SAFe"
+    ],
+    "outcomes": [],
+    "tags": [
+      "delivery",
+      "planning"
+    ],
+    "publish": {
+      "title": "Estimation and risk in PI planning",
+      "summary": "Contributed estimates for requested features in programme increment planning, and set out the risks and effort for work in the areas I know best."
+    }
+  },
+  {
+    "date": "2025-05",
+    "date_approximate": true,
+    "title": "Owned the design of a notification system",
+    "description": "Took ownership of the design of the notification system built into a redesign of our software.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "SWDN",
+        "level": 5
+      },
+      {
+        "code": "DESN",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "notification system",
+      "software design",
+      "redesign"
+    ],
+    "outcomes": [],
+    "tags": [
+      "technical",
+      "architecture",
+      "ownership"
+    ],
+    "publish": {
+      "title": "Owned the design of a notification system",
+      "summary": "Took ownership of the design of the notification system built into a redesign of our software."
+    }
+  },
+  {
+    "date": "2025-08",
+    "date_approximate": true,
+    "title": "Led a new data architecture design",
+    "description": "Led the design of a new architecture for analysing and using data, built around both current needs and those expected in future.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "ARCH",
+        "level": 4
+      },
+      {
+        "code": "DESN",
+        "level": 5
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "architecture",
+      "data",
+      "design leadership"
+    ],
+    "outcomes": [],
+    "tags": [
+      "technical",
+      "architecture",
+      "leadership"
+    ],
+    "publish": {
+      "title": "Led a new data architecture design",
+      "summary": "Led the design of a new architecture for analysing and using data, built around both current needs and those expected in future."
+    }
+  },
+  {
+    "date": "2025-11",
+    "date_approximate": true,
+    "title": "Laid the groundwork for capability metrics",
+    "description": "Did the initial work to add metrics to our software so its capabilities can be quantified.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "PROG",
+        "level": 4
+      },
+      {
+        "code": "SWDN",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "metrics",
+      "measurement",
+      "capability"
+    ],
+    "outcomes": [],
+    "tags": [
+      "technical",
+      "innovation"
+    ],
+    "publish": {
+      "title": "Laid the groundwork for capability metrics",
+      "summary": "Did the initial work to add metrics to our software so its capabilities can be quantified."
+    }
+  },
+  {
+    "date": "2026-02",
+    "date_approximate": true,
+    "title": "Facilitated team retrospectives",
+    "description": "Ran retrospectives for the team, focused on improving how we work together.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "OFCL",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "weak",
+    "keywords": [
+      "retrospectives",
+      "facilitation",
+      "continuous improvement"
+    ],
+    "outcomes": [],
+    "tags": [
+      "leadership",
+      "facilitation"
+    ],
+    "publish": {
+      "title": "Facilitated team retrospectives",
+      "summary": "Ran retrospectives for the team, focused on improving how we work together."
+    }
+  },
+  {
+    "date": "2026-05",
+    "date_approximate": true,
+    "title": "Improved feature planning against requirements",
+    "description": "Helped mature how features are planned and defined against customer and stakeholder requirements, including user stories with Definitions of Done tied to those requirements.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "REQM",
+        "level": 4
+      },
+      {
+        "code": "DLMG",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "feature planning",
+      "user stories",
+      "Definition of Done",
+      "requirements"
+    ],
+    "outcomes": [],
+    "tags": [
+      "delivery",
+      "requirements"
+    ],
+    "publish": {
+      "title": "Improved feature planning against requirements",
+      "summary": "Helped mature how features are planned and defined against customer and stakeholder requirements, including user stories with Definitions of Done tied to those requirements."
+    }
+  }
+]

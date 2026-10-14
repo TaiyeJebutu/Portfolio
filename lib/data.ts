@@ -16,6 +16,8 @@ export interface PublicItem {
   id: string;
   date: string;
   year: string;
+  /** Date is a best estimate; shown as "c. YYYY" rather than a month. */
+  approx: boolean;
   title: string;
   summary: string;
   outcomes: string[];
@@ -33,6 +35,7 @@ export const published: PublicItem[] = records
     id: `e${i}`,
     date: r.date,
     year: r.date.slice(0, 4),
+    approx: Boolean(r.date_approximate) || r.date.length === 4,
     title: r.publish!.title,
     summary: r.publish!.summary,
     outcomes: r.publish!.outcomes ?? [],
@@ -62,22 +65,18 @@ for (const item of published) {
   }
 }
 
-/** Skill x quarter evidence counts for the heatmap. */
+/** Skill x year evidence counts for the heatmap. Years, not quarters, so approximate dates are never shown as more precise than they are. */
 export function quarterGrid() {
   if (!published.length) return { quarters: [] as string[], rows: [] as { code: string; cells: number[] }[] };
-  const q = (d: string) => `${d.slice(0, 4)} Q${Math.ceil(Number(d.slice(5, 7) || "1") / 3)}`;
-  const toIndex = (label: string) => Number(label.slice(0, 4)) * 4 + Number(label.slice(-1)) - 1;
-  const labels = published.map((p) => q(p.date));
-  const min = Math.min(...labels.map(toIndex));
-  const max = Math.max(...labels.map(toIndex));
+  const years = published.map((p) => Number(p.year));
+  const max = Math.max(...years);
+  const min = Math.max(Math.min(...years), max - 5);
   const quarters: string[] = [];
-  for (let i = Math.max(min, max - 7); i <= max; i++) quarters.push(`${Math.floor(i / 4)} Q${(i % 4) + 1}`);
+  for (let y = min; y <= max; y++) quarters.push(String(y));
   const codes = Object.keys(skillStats).sort((a, b) => skillStats[b].count - skillStats[a].count);
   const rows = codes.map((code) => ({
     code,
-    cells: quarters.map(
-      (label) => published.filter((p) => q(p.date) === label && p.skills.some((s) => s.code === code)).length,
-    ),
+    cells: quarters.map((y) => published.filter((p) => p.year === y && p.skills.some((s) => s.code === code)).length),
   }));
   return { quarters, rows };
 }
