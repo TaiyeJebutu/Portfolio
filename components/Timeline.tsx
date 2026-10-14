@@ -27,7 +27,7 @@ export default function Timeline({ milestones, items }: { milestones: Milestone[
   return (
     <Section id="timeline" title="Timeline" intro={
         items.length
-          ? "Most recent first. Open an entry to see what changed and which skills it shows."
+          ? "Newest year first, with the strongest evidence at the top of each year. Open an entry to see what changed and which skills it shows."
           : "The milestones so far, most recent first."
       }
     >
@@ -44,30 +44,54 @@ export default function Timeline({ milestones, items }: { milestones: Milestone[
               <Reveal>
                 <h3 className="pl-8 type-numeral text-3xl md:pl-0 md:text-4xl">{year}</h3>
               </Reveal>
-              <ol className="space-y-3">
-                {entries
-                  .filter((e) => e.date.startsWith(year))
-                  .map((e) => (
-                    <li key={e.key} className="relative pl-8 md:pl-10">
-                      <span
-                        aria-hidden="true"
-                        className={`absolute left-0 top-[1.15rem] h-[0.9375rem] w-[0.9375rem] -translate-x-[0.03rem] rounded-full border-2 md:-left-4 ${
-                          e.kind === "milestone" ? "border-accent bg-accent" : "border-accent bg-bg"
-                        }`}
-                      />
-                      {e.kind === "milestone" ? (
-                        <MilestoneRow title={e.title} detail={e.detail} date={e.date} />
-                      ) : (
-                        <EvidenceCard item={e.item} />
-                      )}
-                    </li>
-                  ))}
-              </ol>
+              <YearEntries entries={entries.filter((e) => e.date.startsWith(year))} year={year} />
             </li>
           ))}
         </ol>
       </div>
     </Section>
+  );
+}
+
+const rank = { strong: 0, moderate: 1, weak: 2 } as const;
+const VISIBLE = 6;
+
+/** A year's entries: milestones first, then strongest evidence; long years collapse behind a button. */
+function YearEntries({ entries, year }: { entries: Entry[]; year: string }) {
+  const [all, setAll] = useState(false);
+  const sorted = [...entries].sort((a, b) => {
+    const ra = a.kind === "milestone" ? -1 : rank[a.item.strength];
+    const rb = b.kind === "milestone" ? -1 : rank[b.item.strength];
+    return ra - rb || b.date.localeCompare(a.date);
+  });
+  const shown = all ? sorted : sorted.slice(0, VISIBLE);
+  const hidden = sorted.length - shown.length;
+  return (
+    <ol className="space-y-3">
+      {shown.map((e) => (
+        <li key={e.key} className="relative pl-8 md:pl-10">
+          <span
+            aria-hidden="true"
+            className={`absolute left-0 top-[1.15rem] h-[0.9375rem] w-[0.9375rem] -translate-x-[0.03rem] rounded-full border-2 md:-left-4 ${
+              e.kind === "milestone" ? "border-accent bg-accent" : "border-accent bg-bg"
+            }`}
+          />
+          {e.kind === "milestone" ? <MilestoneRow title={e.title} detail={e.detail} date={e.date} /> : <EvidenceCard item={e.item} />}
+        </li>
+      ))}
+      {(hidden > 0 || all) && sorted.length > VISIBLE && (
+        <li className="pl-8 md:pl-10">
+          <button
+            type="button"
+            onClick={() => setAll((v) => !v)}
+            aria-expanded={all}
+            className="rounded-full border border-line px-4 py-2 type-small font-semibold transition-colors hover:border-ink"
+          >
+            {all ? `Show fewer from ${year}` : `Show ${hidden} more from ${year}`}
+          </button>
+        </li>
+      )}
+    </ol>
   );
 }
 

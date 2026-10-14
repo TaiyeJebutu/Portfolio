@@ -352,7 +352,6 @@
     "keywords": [
       "release planning",
       "acceptance criteria",
-      "SDD",
       "documentation"
     ],
     "outcomes": [],
@@ -572,6 +571,815 @@
     "publish": {
       "title": "Improved feature planning against requirements",
       "summary": "Helped mature how features are planned and defined against customer and stakeholder requirements, including user stories with Definitions of Done tied to those requirements."
+    }
+  },
+  {
+    "date": "2026",
+    "date_approximate": true,
+    "title": "Raised flaky component test pass rates from 30% to 100%",
+    "description": "Tracked down and fixed flaky unit and component tests across every component in our pipeline. Some suites were passing as little as 30% of the time; all now pass consistently.",
+    "impact": "Component test pass rates raised from as low as 30% to 100%; Pipeline failures now point to real defects",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "TEST",
+        "level": 5
+      },
+      {
+        "code": "SINT",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "strong",
+    "keywords": [
+      "flaky tests",
+      "pipeline stability",
+      "CI",
+      "component testing",
+      "unit testing"
+    ],
+    "outcomes": [
+      "Component test pass rates raised from as low as 30% to 100%",
+      "Pipeline failures now point to real defects"
+    ],
+    "tags": [
+      "technical",
+      "quality",
+      "improvement"
+    ],
+    "publish": {
+      "title": "Raised flaky component test pass rates from 30% to 100%",
+      "summary": "Tracked down and fixed flaky unit and component tests across every component in our pipeline. Some suites were passing as little as 30% of the time; all now pass consistently.",
+      "outcomes": [
+        "Component test pass rates raised from as low as 30% to 100%",
+        "Pipeline failures now point to real defects"
+      ]
+    }
+  },
+  {
+    "date": "2026",
+    "date_approximate": true,
+    "title": "Created an onboarding pack and onboarded two new engineers",
+    "description": "Wrote an onboarding pack for the project and used it to bring two new team members up to speed.",
+    "impact": "Two new team members onboarded; Reusable pack in place for future joiners",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "PDSV",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "strong",
+    "keywords": [
+      "onboarding",
+      "knowledge sharing",
+      "documentation"
+    ],
+    "outcomes": [
+      "Two new team members onboarded",
+      "Reusable pack in place for future joiners"
+    ],
+    "tags": [
+      "mentoring",
+      "leadership"
+    ],
+    "publish": {
+      "title": "Created an onboarding pack and onboarded two new engineers",
+      "summary": "Wrote an onboarding pack for the project and used it to bring two new team members up to speed.",
+      "outcomes": [
+        "Two new team members onboarded",
+        "Reusable pack in place for future joiners"
+      ]
+    }
+  },
+  {
+    "date": "2026",
+    "date_approximate": true,
+    "title": "Wrote a project training course now used by three teams",
+    "description": "Created a detailed training course for the project. A new starter has used it, three teams have adopted it, and a senior manager has taken it.",
+    "impact": "Adopted by three teams; Taken by a senior manager",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "PDSV",
+        "level": 5
+      },
+      {
+        "code": "METL",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "strong",
+    "keywords": [
+      "training",
+      "course design",
+      "knowledge sharing"
+    ],
+    "outcomes": [
+      "Adopted by three teams",
+      "Taken by a senior manager"
+    ],
+    "tags": [
+      "mentoring",
+      "leadership"
+    ],
+    "publish": {
+      "title": "Wrote a project training course now used by three teams",
+      "summary": "Created a detailed training course for the project. A new starter has used it, three teams have adopted it, and a senior manager has taken it.",
+      "outcomes": [
+        "Adopted by three teams",
+        "Taken by a senior manager"
+      ]
+    }
+  },
+  {
+    "date": "2026",
+    "date_approximate": true,
+    "title": "Defined use cases for new software solutions",
+    "description": "Worked with other engineers to define the use cases for several new software solutions, giving design and testing a shared starting point.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "REQM",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "use cases",
+      "requirements",
+      "new solution"
+    ],
+    "outcomes": [],
+    "tags": [
+      "requirements",
+      "delivery"
+    ],
+    "publish": {
+      "title": "Defined use cases for new software solutions",
+      "summary": "Worked with other engineers to define the use cases for several new software solutions, giving design and testing a shared starting point.",
+      "outcomes": []
+    }
+  },
+  {
+    "date": "2026",
+    "date_approximate": true,
+    "title": "Profiled the performance of our software",
+    "description": "Profiled the performance and metrics of the software solution, building on earlier work to make its capabilities measurable.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "DESN",
+        "level": 4
+      },
+      {
+        "code": "PROG",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "performance profiling",
+      "metrics",
+      "non-functional requirements"
+    ],
+    "outcomes": [],
+    "tags": [
+      "technical"
+    ],
+    "publish": {
+      "title": "Profiled the performance of our software",
+      "summary": "Profiled the performance and metrics of the software solution, building on earlier work to make its capabilities measurable.",
+      "outcomes": []
+    }
+  },
+  {
+    "date": "2026",
+    "date_approximate": true,
+    "title": "Produced release documentation and helped automate it",
+    "description": "Wrote the release note and delivery documentation for a software release, and helped automate generation of the design description.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "RELM",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "release documentation",
+      "automation"
+    ],
+    "outcomes": [],
+    "tags": [
+      "delivery",
+      "improvement"
+    ],
+    "publish": {
+      "title": "Produced release documentation and helped automate it",
+      "summary": "Wrote the release note and delivery documentation for a software release, and helped automate generation of the design description.",
+      "outcomes": []
+    }
+  },
+  {
+    "date": "2026",
+    "date_approximate": true,
+    "title": "Moved every component to an updated interface",
+    "description": "Updated and integrated all of our components for an interface change, keeping the whole solution consistent.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "PROG",
+        "level": 4
+      },
+      {
+        "code": "SINT",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "interfaces",
+      "integration",
+      "refactoring"
+    ],
+    "outcomes": [],
+    "tags": [
+      "technical",
+      "integration"
+    ],
+    "publish": {
+      "title": "Moved every component to an updated interface",
+      "summary": "Updated and integrated all of our components for an interface change, keeping the whole solution consistent.",
+      "outcomes": []
+    }
+  },
+  {
+    "date": "2026",
+    "date_approximate": true,
+    "title": "Fixed component status reporting",
+    "description": "Fixed bugs that stopped software components reporting their status, and a failing integration test.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "PROG",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "weak",
+    "keywords": [
+      "bug fixing",
+      "component status",
+      "integration tests"
+    ],
+    "outcomes": [],
+    "tags": [
+      "technical"
+    ],
+    "publish": {
+      "title": "Fixed component status reporting",
+      "summary": "Fixed bugs that stopped software components reporting their status, and a failing integration test.",
+      "outcomes": []
+    }
+  },
+  {
+    "date": "2026",
+    "date_approximate": true,
+    "title": "Co-designed new components and ran design workshops",
+    "description": "Designed and documented several new components with a small group of engineers, and hosted workshops to work through the designs with others.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "SWDN",
+        "level": 5
+      },
+      {
+        "code": "OFCL",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "software design",
+      "design documentation",
+      "workshops"
+    ],
+    "outcomes": [],
+    "tags": [
+      "technical",
+      "architecture",
+      "leadership"
+    ],
+    "publish": {
+      "title": "Co-designed new components and ran design workshops",
+      "summary": "Designed and documented several new components with a small group of engineers, and hosted workshops to work through the designs with others.",
+      "outcomes": []
+    }
+  },
+  {
+    "date": "2026",
+    "date_approximate": true,
+    "title": "Built new components from scratch through to testing",
+    "description": "Built several new components for our software from the ground up, taking them all the way through to testing.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "PROG",
+        "level": 5
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "new components",
+      "end-to-end ownership",
+      "testing"
+    ],
+    "outcomes": [],
+    "tags": [
+      "technical",
+      "ownership"
+    ],
+    "publish": {
+      "title": "Built new components from scratch through to testing",
+      "summary": "Built several new components for our software from the ground up, taking them all the way through to testing.",
+      "outcomes": []
+    }
+  },
+  {
+    "date": "2026",
+    "date_approximate": true,
+    "title": "Long-running integration tests for the whole solution",
+    "description": "Implemented intensive, long-running integration tests that exercise the complete software solution under sustained conditions.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "TEST",
+        "level": 4
+      },
+      {
+        "code": "SINT",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "integration testing",
+      "soak testing",
+      "test automation"
+    ],
+    "outcomes": [],
+    "tags": [
+      "technical",
+      "quality",
+      "integration"
+    ],
+    "publish": {
+      "title": "Long-running integration tests for the whole solution",
+      "summary": "Implemented intensive, long-running integration tests that exercise the complete software solution under sustained conditions.",
+      "outcomes": []
+    }
+  },
+  {
+    "date": "2026",
+    "date_approximate": true,
+    "title": "Linked pipeline tests to requirements traceability",
+    "description": "Connected our requirements traceability tool to automated test results from the pipeline, so requirements coverage for a release can be shown straight from test runs.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "TEST",
+        "level": 5
+      },
+      {
+        "code": "REQM",
+        "level": 4
+      },
+      {
+        "code": "METL",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "traceability",
+      "requirements coverage",
+      "pipeline",
+      "automation",
+      "release"
+    ],
+    "outcomes": [],
+    "tags": [
+      "technical",
+      "quality",
+      "improvement",
+      "delivery"
+    ],
+    "publish": {
+      "title": "Linked pipeline tests to requirements traceability",
+      "summary": "Connected our requirements traceability tool to automated test results from the pipeline, so requirements coverage for a release can be shown straight from test runs.",
+      "outcomes": []
+    }
+  },
+  {
+    "date": "2026",
+    "date_approximate": true,
+    "title": "Demonstrated a new capability to customers",
+    "description": "Recorded and presented a demonstration of a new capability to customers.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "RLMT",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "customer demo",
+      "stakeholder engagement"
+    ],
+    "outcomes": [],
+    "tags": [
+      "delivery",
+      "collaboration"
+    ],
+    "publish": {
+      "title": "Demonstrated a new capability to customers",
+      "summary": "Recorded and presented a demonstration of a new capability to customers.",
+      "outcomes": []
+    }
+  },
+  {
+    "date": "2026",
+    "date_approximate": true,
+    "title": "Ran backlog refinement every week of the year",
+    "description": "Hosted backlog refinement for the team every week throughout the year.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "OFCL",
+        "level": 4
+      },
+      {
+        "code": "REQM",
+        "level": 4
+      },
+      {
+        "code": "DEMG",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "backlog refinement",
+      "facilitation",
+      "Scrum"
+    ],
+    "outcomes": [],
+    "tags": [
+      "leadership",
+      "delivery"
+    ],
+    "publish": {
+      "title": "Ran backlog refinement every week of the year",
+      "summary": "Hosted backlog refinement for the team every week throughout the year.",
+      "outcomes": []
+    }
+  },
+  {
+    "date": "2026",
+    "date_approximate": true,
+    "title": "Mentored three engineers through real progression",
+    "description": "I meet each of my three mentees every two weeks. Two have started a training course I recommended, and one has moved into a permanent role.",
+    "impact": "One mentee moved into a permanent role; Two mentees started a recommended course",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "PDSV",
+        "level": 5
+      }
+    ],
+    "evidence_strength": "strong",
+    "keywords": [
+      "mentoring",
+      "professional development"
+    ],
+    "outcomes": [
+      "One mentee moved into a permanent role",
+      "Two mentees started a recommended course"
+    ],
+    "tags": [
+      "mentoring",
+      "leadership"
+    ],
+    "publish": {
+      "title": "Mentored three engineers through real progression",
+      "summary": "I meet each of my three mentees every two weeks. Two have started a training course I recommended, and one has moved into a permanent role.",
+      "outcomes": [
+        "One mentee moved into a permanent role",
+        "Two mentees started a recommended course"
+      ]
+    }
+  },
+  {
+    "date": "2026",
+    "date_approximate": true,
+    "title": "Led and supported feature breakdowns",
+    "description": "Led some and contributed to other feature breakdowns during the year, and helped plan an upcoming work package.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "REQM",
+        "level": 4
+      },
+      {
+        "code": "DLMG",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "feature breakdown",
+      "work package",
+      "planning"
+    ],
+    "outcomes": [],
+    "tags": [
+      "delivery",
+      "planning"
+    ],
+    "publish": {
+      "title": "Led and supported feature breakdowns",
+      "summary": "Led some and contributed to other feature breakdowns during the year, and helped plan an upcoming work package.",
+      "outcomes": []
+    }
+  },
+  {
+    "date": "2026",
+    "date_approximate": true,
+    "title": "Bridged software and research teams",
+    "description": "Helped the software and research teams agree how to implement a new component.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "RLMT",
+        "level": 4
+      },
+      {
+        "code": "DESN",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "cross-team",
+      "research",
+      "technical discussion"
+    ],
+    "outcomes": [],
+    "tags": [
+      "collaboration",
+      "technical"
+    ],
+    "publish": {
+      "title": "Bridged software and research teams",
+      "summary": "Helped the software and research teams agree how to implement a new component.",
+      "outcomes": []
+    }
+  },
+  {
+    "date": "2026",
+    "date_approximate": true,
+    "title": "Twice-weekly progress reporting to senior management",
+    "description": "Reported twice a week to all Scrum Masters and senior management on progress against planned features and objectives. Senior management have acted on these reports.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "DEMG",
+        "level": 4
+      },
+      {
+        "code": "RLMT",
+        "level": 5
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "progress reporting",
+      "senior management",
+      "delivery tracking"
+    ],
+    "outcomes": [],
+    "tags": [
+      "delivery",
+      "leadership",
+      "communication"
+    ],
+    "publish": {
+      "title": "Twice-weekly progress reporting to senior management",
+      "summary": "Reported twice a week to all Scrum Masters and senior management on progress against planned features and objectives. Senior management have acted on these reports.",
+      "outcomes": []
+    }
+  },
+  {
+    "date": "2026",
+    "date_approximate": true,
+    "title": "Contributed to test and performance workshops",
+    "description": "Took part in workshops on testing with real data and on building performance utilities.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "TEST",
+        "level": 4
+      },
+      {
+        "code": "METL",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "weak",
+    "keywords": [
+      "workshops",
+      "performance utilities"
+    ],
+    "outcomes": [],
+    "tags": [
+      "technical",
+      "collaboration"
+    ],
+    "publish": {
+      "title": "Contributed to test and performance workshops",
+      "summary": "Took part in workshops on testing with real data and on building performance utilities.",
+      "outcomes": []
+    }
+  },
+  {
+    "date": "2026",
+    "date_approximate": true,
+    "title": "Led three months of bug triage for a cross-subsystem release",
+    "description": "Led and co-ran bug triage twice a week for three months, working through around 25 defects so our software could be released to other subsystems.",
+    "impact": "Around 25 defects triaged over three months",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "DEMG",
+        "level": 4
+      },
+      {
+        "code": "OFCL",
+        "level": 4
+      },
+      {
+        "code": "SINT",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "strong",
+    "keywords": [
+      "bug triage",
+      "integration",
+      "release",
+      "facilitation"
+    ],
+    "outcomes": [
+      "Around 25 defects triaged over three months"
+    ],
+    "tags": [
+      "delivery",
+      "leadership",
+      "integration"
+    ],
+    "publish": {
+      "title": "Led three months of bug triage for a cross-subsystem release",
+      "summary": "Led and co-ran bug triage twice a week for three months, working through around 25 defects so our software could be released to other subsystems.",
+      "outcomes": [
+        "Around 25 defects triaged over three months"
+      ]
+    }
+  },
+  {
+    "date": "2026",
+    "date_approximate": true,
+    "title": "Led customer conversations on system issues",
+    "description": "Led discussions with customers about current system issues, alongside product owners and tech leads.",
+    "impact": "Impact not yet quantified.",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "RLMT",
+        "level": 5
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "customer communication",
+      "incident discussion"
+    ],
+    "outcomes": [],
+    "tags": [
+      "collaboration",
+      "communication"
+    ],
+    "publish": {
+      "title": "Led customer conversations on system issues",
+      "summary": "Led discussions with customers about current system issues, alongside product owners and tech leads.",
+      "outcomes": []
+    }
+  },
+  {
+    "date": "2026",
+    "date_approximate": true,
+    "title": "Helped design a branching strategy for parallel work",
+    "description": "Contributed to a new branching strategy that let the project move from a single stream of work to as many parallel streams as it needs.",
+    "impact": "From 1 work stream to unlimited parallel streams",
+    "stakeholders": [
+      "Own team"
+    ],
+    "competencies": [
+      {
+        "code": "METL",
+        "level": 4
+      },
+      {
+        "code": "RELM",
+        "level": 4
+      }
+    ],
+    "evidence_strength": "moderate",
+    "keywords": [
+      "branching strategy",
+      "source control",
+      "parallel work streams"
+    ],
+    "outcomes": [
+      "From 1 work stream to unlimited parallel streams"
+    ],
+    "tags": [
+      "delivery",
+      "technical"
+    ],
+    "publish": {
+      "title": "Helped design a branching strategy for parallel work",
+      "summary": "Contributed to a new branching strategy that let the project move from a single stream of work to as many parallel streams as it needs.",
+      "outcomes": [
+        "From 1 work stream to unlimited parallel streams"
+      ]
     }
   }
 ]
