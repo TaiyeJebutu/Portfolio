@@ -29,7 +29,7 @@ export default function Practice({
     <Section
       id="practice"
       title="How I work"
-      intro="Four areas of engineering practice, each tied to the SFIA 9 skills I track my evidence against."
+      intro="Four areas of engineering practice. I measure my work against SFIA, the international framework employers and professional bodies use to describe digital and engineering skills."
     >
       <div className="grid gap-x-12 gap-y-12 md:grid-cols-2">
         {areas.map((a, i) => {
@@ -61,10 +61,13 @@ export default function Practice({
 
       {showDashboard && (
         <div className="mt-24 grid grid-cols-1 gap-10 lg:grid-cols-12">
+          <Reveal className="min-w-0 lg:col-span-12">
+            <LevelScale stats={stats} />
+          </Reveal>
           <Reveal className="min-w-0 rounded-3xl bg-surface p-6 md:p-8 lg:col-span-5">
             <h3 className="type-h3">Level by skill</h3>
             <p className="mt-2 type-small text-muted">
-              Highest SFIA level shown by moderate or strong evidence. Ring 5 is “ensure, advise”, ring 6 is “initiate, influence”.
+              Highest level my published evidence supports in each skill. Outer rings are higher levels; ring 5 is senior specialist, ring 6 principal.
             </p>
             <Radar stats={stats} />
           </Reveal>
@@ -221,6 +224,60 @@ function Heatmap({ grid }: { grid: { quarters: string[]; rows: { code: string; c
           ))}
         </tbody>
       </table>
+    </div>
+  );
+}
+
+/** Plain-language key to SFIA levels, so a reader who has never met SFIA can place the numbers. */
+const scale = [
+  { level: 1, name: "Follow", role: "Entry level, working under close direction" },
+  { level: 2, name: "Assist", role: "Junior, working under routine direction" },
+  { level: 3, name: "Apply", role: "Practitioner who works independently on defined tasks" },
+  { level: 4, name: "Enable", role: "Experienced professional who guides others" },
+  { level: 5, name: "Ensure, advise", role: "Senior specialist or lead, accountable for outcomes and trusted for advice" },
+  { level: 6, name: "Initiate, influence", role: "Principal or head of a function, shaping direction across the organisation" },
+  { level: 7, name: "Set strategy, inspire", role: "Director or executive, setting strategy for the organisation" },
+];
+
+function LevelScale({ stats }: { stats: Record<string, SkillStat> }) {
+  const top = Math.max(0, ...Object.values(stats).map((s) => s.level));
+  const atTop = Object.values(stats).filter((s) => s.level === top).length;
+  return (
+    <div>
+      <h3 className="type-h3">Reading the levels</h3>
+      <p className="mt-2 max-w-[68ch] text-muted">
+        SFIA describes responsibility on a seven-step scale. Each step is about autonomy, influence and accountability, not
+        years of experience, and level 7 is reserved for people who set an organisation&rsquo;s strategy. The levels below are
+        conservative: a level only appears once published evidence supports it.
+      </p>
+      <ol className="mt-8 grid grid-cols-1 gap-1.5 sm:grid-cols-7 sm:gap-2" aria-label="SFIA levels of responsibility">
+        {scale.map((s) => {
+          const reached = s.level <= top;
+          const current = s.level === top;
+          return (
+            <li
+              key={s.level}
+              className={`flex items-start gap-4 rounded-2xl px-4 py-3 sm:block sm:min-h-[11rem] sm:py-4 ${
+                current ? "bg-accent text-bg" : reached ? "bg-accent-soft" : "bg-surface"
+              }`}
+            >
+              <p className="type-numeral w-7 shrink-0 text-3xl sm:w-auto">{s.level}</p>
+              <div>
+              <p className="font-semibold leading-tight sm:mt-2">{s.name}</p>
+              <p className={`mt-1 type-small ${current ? "opacity-90" : "text-muted"}`}>{s.role}</p>
+              {current && (
+                <p className="mt-3 type-small font-semibold">
+                  My highest: {atTop} {atTop === 1 ? "skill" : "skills"}
+                </p>
+              )}
+              </div>
+            </li>
+          );
+        })}
+      </ol>
+      <p className="mt-3 type-small text-muted">
+        Typical roles are a guide to scope. SFIA levels are not job titles, and titles differ between employers.
+      </p>
     </div>
   );
 }
